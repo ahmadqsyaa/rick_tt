@@ -7,7 +7,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.get('/', (req, res) =>{
-   res.json({message: hallo bang hehe :v})
+   res.json({message: 'hallo bang hehe :v'})
 })
 app.get('/download', async (req, res) => {
    const { url } = req.query
