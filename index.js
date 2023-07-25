@@ -6,7 +6,9 @@ const { getIDVideo, getOriginalUrl, serializeResult } = require(path.join(__dirn
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
+app.get('/', (req, res) =>{
+   res.json({message: hallo bang hehe :v})
+})
 app.get('/download', async (req, res) => {
    const { url } = req.query
    if(!url) return res.status(400).json({ error: 'Not Found Url!' })
