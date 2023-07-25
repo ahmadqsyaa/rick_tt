@@ -45,6 +45,6 @@ module.exports = {
      result.video1 = metadata.video?.play_addr?.url_list.slice(0,-2);
      result.video2 = metadata.video?.play_addr?.url_list.slice(-1);
      result.video_wm = metadata.video?.download_addr.url_list.slice(-1);
-    return data;
+    return result;
   }
 };
