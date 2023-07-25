@@ -1,7 +1,7 @@
 const axios = require('axios')
 const express = require('express')
-const path = require('path')
-const fs = require('fs')
+const path = require('node:path')
+const fs = require('node:fs')
 const { getIDVideo, getOriginalUrl, serializeResult } = require(path.join(__dirname, '.','main'));
 const app = express()
 app.use(express.json())
