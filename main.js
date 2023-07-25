@@ -27,23 +27,24 @@ module.exports = {
   },
   serializeResult: (result) => {
     const metadata = result.aweme_list?.[0];
-    nickname = metadata.author.nickname;
-    aweme_id = metadata.aweme_id;
-    author_id = metadata.author.uid;
-    avatar = metadata.author.avatar_larger.url_list[1];
-    title = metadata.desc;
-    url_original = metadata.share_url;
-    cover = metadata.video?.cover?.url_list.slice(0, -1);
-    comment = metadata.statistics.comment_count;
-    download = metadata.statistics.download_count;
-    play = metadata.statistics.play_count;
-    share = metadata.statistics.share_count;
-    collect = metadata.statistics.collect_count;
-    music_thumbnail = metadata.music.cover_hd.url_list[1];
-    music = metadata.music.play_url.uri;
-    video1 = metadata.video?.play_addr?.url_list.slice(0,-2);
-    video2 = metadata.video?.play_addr?.url_list.slice(-1);
-    video_wm = metadata.video?.download_addr.url_list.slice(-1);
+    const data = new Object();
+    data.dnickname = metadata.author.nickname;
+    data.aweme_id = metadata.aweme_id;
+    data.author_id = metadata.author.uid;
+    data.avatar = metadata.author.avatar_larger.url_list[1];
+    data.title = metadata.desc;
+    data.url_original = metadata.share_url;
+    data.cover = metadata.video?.cover?.url_list.slice(0, -1);
+    data.comment = metadata.statistics.comment_count;
+    data.download = metadata.statistics.download_count;
+    data.play = metadata.statistics.play_count;
+    data.share = metadata.statistics.share_count;
+    data.collect = metadata.statistics.collect_count;
+    data.music_thumbnail = metadata.music.cover_hd.url_list[1];
+    data.music = metadata.music.play_url.uri;
+    data.video1 = metadata.video?.play_addr?.url_list.slice(0,-2);
+    data.video2 = metadata.video?.play_addr?.url_list.slice(-1);
+    data.video_wm = metadata.video?.download_addr.url_list.slice(-1);
     return data;
   }
 };
