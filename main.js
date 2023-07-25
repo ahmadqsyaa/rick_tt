@@ -25,9 +25,9 @@ module.exports = {
       request.end();
     });
   },
-  serializeResult: (result) => {
+  serializeResult: (data) => {
     const metadata = result.aweme_list?.[0];
-    const data = new Object();
+    let data = new Object();
     data.dnickname = metadata.author.nickname;
     data.aweme_id = metadata.aweme_id;
     data.author_id = metadata.author.uid;
