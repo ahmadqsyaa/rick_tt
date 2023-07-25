@@ -18,8 +18,6 @@ app.get('/download', async (req, res) => {
       let { result } = await axios.get(`https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/feed/?aweme_id=${id}`);
       let data = serializeResult(result);
       res.json({
-         status: true,
-         type: 'application/json',
          data
       });
    } catch (e) {
