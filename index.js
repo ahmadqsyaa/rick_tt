@@ -15,7 +15,7 @@ app.get('/download', async (req, res) => {
    try {
       let link = await getOriginalUrl(url)
       let id = getIDVideo(link)
-      let { result } = axios.get(`https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/feed/?aweme_id=${id}`);
+      let { result } = await axios.get(`https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/feed/?aweme_id=${id}`);
       let data = serializeResult(result);
       res.json({
          status: true,
