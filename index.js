@@ -20,7 +20,6 @@ app.get('/download', async (req, res) => {
       res.json({
          result
       });
-      res.type('application/json')
    } catch (e) {
    res.status(400).json({ error: e })
       console.log(e)
