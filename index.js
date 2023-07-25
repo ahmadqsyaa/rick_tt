@@ -20,8 +20,7 @@ app.get('/download', async (req, res) => {
       res.json({
          result
       });
-      res.setHeader('Content-Type', 'video/mp4');
-      res.setHeader('Content-Disposition', `attachment; filename=${id}.mp4`);
+      res.setHeader('Content-Type', 'application/json');
    } catch (e) {
    res.status(400).json({ error: e })
       console.log(e)
