@@ -20,7 +20,7 @@ app.get('/download', async (req, res) => {
       const result = serializeResult(data);
       const end = Date.now();
       res.json({
-      time: `${start - end}ms`,
+      time: `${end - start}ms`,
       result
       });
    } catch (e) {
