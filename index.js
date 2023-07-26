@@ -20,9 +20,7 @@ app.get('/download', async (req, res) => {
       let result = serializeResult(data);
       const end = Date.time()
       res.json({
-      time: `${start - end}ms`
-      // type: 'application/json',
-      // result
+      result
       });
    } catch (e) {
    res.status(400).json({ error: e })
