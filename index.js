@@ -21,6 +21,7 @@ app.get('/download', async (req, res) => {
       const end = Date.now();
       res.json({
       time: `${end - start}ms`,
+      type: 'application/json'
       result
       });
    } catch (e) {
