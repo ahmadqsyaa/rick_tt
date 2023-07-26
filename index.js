@@ -11,13 +11,13 @@ app.get('/', (req, res) =>{
 });
 app.get('/download', async (req, res) => {
    const start = Date.time()
-   let url = req.query.url
+   const url = req.query.url
    if(!url) return res.status(400).json({ error: 'Not Found Url!' })
    try {
       let link = await getOriginalUrl(url)
       let id = getIDVideo(link)
       let { data } = await axios.get(`https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/feed/?aweme_id=${id}`);
-      let result = serializeResult(data);
+      const result = serializeResult(data);
       const end = Date.time()
       res.json({
       result
