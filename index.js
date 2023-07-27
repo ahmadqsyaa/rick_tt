@@ -11,7 +11,10 @@ app.get('/', (req, res) =>{
 });
 app.get('/download', async (req, res) => {
    const url = req.query.url
-   if(!url) return res.status(400).json({ error: 'Not Found Url!' })
+   if(!url) return res.status(400).json({
+   status: 404,
+   error: 'URL not found, please insert url'
+   })
    try {
       let link = await getOriginalUrl(url)
       let id = getIDVideo(link)
@@ -25,7 +28,10 @@ app.get('/download', async (req, res) => {
       result
       });
    } catch (e) {
-   res.status(400).json({ error : e })
+   res.status(404).json({
+   status: 404,
+   message : `video not found or eror ${e}`
+   })
       console.log(e)
    }
 })
