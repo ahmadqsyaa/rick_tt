@@ -42,8 +42,8 @@ module.exports = {
      result.collect = metadata.statistics.collect_count;
      result.music_thumbnail = metadata.music.cover_hd.url_list[1];
      result.music = metadata.music.play_url.uri;
-     result.video1 = metadata.video?.play_addr?.url_list.slice(0,-2);
-     result.video2 = metadata.video?.play_addr?.url_list.slice(-1);
+     result.video_v1 = metadata.video?.play_addr?.url_list.slice(0,-2);
+     result.video_v2 = metadata.video?.play_addr?.url_list.slice(-1);
      result.video_wm = metadata.video?.download_addr.url_list.slice(-1);
     return result;
   }
