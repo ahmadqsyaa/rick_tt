@@ -13,7 +13,7 @@ app.get('/download', async (req, res) => {
    const url = req.query.url
    if(!url) return res.status(404).json({
    status: 404,
-   error: 'URL not found, please insert url'
+   error: 'URL not found, please insert your url'
    })
    try {
       let link = await getOriginalUrl(url)
@@ -23,6 +23,7 @@ app.get('/download', async (req, res) => {
       const result = serializeResult(data);
       const end = (new Date()).getTime()
       res.json({
+      status: 200,
       time: `${end - start} ms`,
       type: 'application/json',
       result
