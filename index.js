@@ -11,7 +11,7 @@ app.get('/', (req, res) =>{
 });
 app.get('/download', async (req, res) => {
    const url = req.query.url
-   if(!url) return res.status(400).json({
+   if(!url) return res.status(404).json({
    status: 404,
    error: 'URL not found, please insert url'
    })
