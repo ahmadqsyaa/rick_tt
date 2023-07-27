@@ -5,7 +5,7 @@ module.exports = {
     return url.match(regex);
   },
   getIDVideo: (link) => {
-    if (!module.exports.regexUrl(link)) throw 'invalid tiktok url';
+    if (!module.exports.regexUrl(link)) throw 'url invalid';
     return link.match(/video\/([\d|\+]+)?\/?/)[1];
   },
   getOriginalUrl: (link) => {
