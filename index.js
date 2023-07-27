@@ -30,7 +30,7 @@ app.get('/download', async (req, res) => {
    } catch (e) {
    res.status(404).json({
    status: 404,
-   message : `video not found or eror ${e}`
+   message : `video not found or ${e}`
    })
       console.log(e)
    }
