@@ -42,9 +42,8 @@ module.exports = {
      result.collect = metadata.statistics.collect_count;
      result.music_thumbnail = metadata.music.cover_hd.url_list[1];
      result.music = metadata.music.play_url.uri;
-     result.video_v1 = metadata.video?.play_addr?.url_list;
-     result.video_v2 = metadata.video?.play_addr?.url_list.slice(-1);
-     result.video_wm = metadata.video?.download_addr.url_list.slice(-1);
+     result.video = metadata.video?.play_addr?.url_list;
+     result.video_wm = metadata.video?.download_addr.url_list;
     return result;
   }
 };
