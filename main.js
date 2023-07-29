@@ -33,7 +33,7 @@ module.exports = {
      result.author_id = metadata.author.uid;
      result.avatar = metadata.author.avatar_larger.url_list[1];
      result.title = metadata.desc;
-     result.url_original = metadata.share_url;
+     result.url_asli = metadata.share_url;
      result.cover = metadata.video?.cover?.url_list[0];
      result.comment = metadata.statistics.comment_count;
      result.download = metadata.statistics.download_count;
@@ -42,7 +42,7 @@ module.exports = {
      result.collect = metadata.statistics.collect_count;
      result.music_thumbnail = metadata.music.cover_hd.url_list[1];
      result.music = metadata.music.play_url.uri;
-     result.video_v1 = metadata.video?.play_addr?.url_list.slice(0,-2);
+     result.video_v1 = metadata.video?.play_addr?.url_list.slice(0,-1);
      result.video_v2 = metadata.video?.play_addr?.url_list.slice(-1);
      result.video_wm = metadata.video?.download_addr.url_list.slice(-1);
     return result;
