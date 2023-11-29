@@ -28,8 +28,7 @@ module.exports = {
   serializeResult: (data) => {
     const metadata = data.aweme_list?.[0];
     let result = new Object();
-    result.video = metadata.video?.play_addr?.url_list;
-    result.video_wm = metadata.video?.download_addr.url_list;
+    result.video = metadata.video?.play_addr?.url_list[0];
     return result;
   }
 };
