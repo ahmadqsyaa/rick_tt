@@ -19,16 +19,11 @@ app.get('/download', async (req, res) => {
    try {
       let link = await getOriginalUrl(url)
       let id = getIDVideo(link)
-      const start = (new Date()).getTime();
       let { data } = await axios.get(`https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/feed/?aweme_id=${id}`);
       const result = serializeResult(data);
-      const end = (new Date()).getTime()
-      res.json({
-      status: 200,
-      time: `${end - start} ms`,
-      type: 'application/json',
+      res.json(
       result
-      });
+      );
    } catch (e) {
    res.status(404).json({
    status: 404,
