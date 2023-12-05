@@ -29,6 +29,7 @@ module.exports = {
     const metadata = data.aweme_list?.[0];
     let result = new Object();
     result.video = metadata.video?.play_addr?.url_list[0];
+    result.music = metadata.music?.play_url?.url_list[0];
     return result;
   }
 };
