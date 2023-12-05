@@ -30,6 +30,11 @@ module.exports = {
     let result = new Object();
     result.video = metadata.video?.play_addr?.url_list[0];
     result.music = metadata.music?.play_url?.url_list[0];
+    result.title = metadata.desc;
+    result.play = metadata.statistics.play_count;
+    result.like = metadata.statistics.digg_count;
+    result.comment = metadata.statistics.comment_count;
+    result.share = metadata.statistics.share_count;
     return result;
   }
 };
